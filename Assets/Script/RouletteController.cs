@@ -36,6 +36,8 @@ public class RouletteController : MonoBehaviour
         if (speed < 0.1f)
         // 현재 회전 속도가 0.1보다 작을 시
         {
+            // 롤렛이 회전할 때 확 퍼지는 이펙트(파티클) 표시를 위해서 ParticleSystem 컴퍼넌트의 Play 메서드를 호출
+            GetComponentInParent<ParticleSystem>().Play();
             speed = 0f; //속도를 0으로 설정
             SoundController.volumeDown = false; // 사운드 컨트롤러에 '사운드 멈춤' 신호 전달
             SoundController.stopSound = true; // 사운드 재생 멈춤
@@ -48,6 +50,7 @@ public class RouletteController : MonoBehaviour
         // 만약 룰렛이 움직이고 있을 시
         {
             speed *= 0.98f; // 현재 속도에 0.98을 곱해 속도 감속
+
         }
     }
 
@@ -91,6 +94,7 @@ public class RouletteController : MonoBehaviour
 
         if (Input.GetKeyDown("q")) //q 버튼을 누를 시
         {
+            GetComponentInParent<ParticleSystem>().Play();
             speed = 0f; // 속도를 0으로 설정, 즉시 정지
             isStop = false; // 멈춤 상태를 해제
             audioSource.PlayOneShot(RingSound); // 정지 효과음을 재생
