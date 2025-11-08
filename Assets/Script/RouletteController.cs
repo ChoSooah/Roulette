@@ -25,6 +25,7 @@ public class RouletteController : MonoBehaviour
     // RingSound: 룰렛이 멈춤 상태일 때 재생할 효과음(사운드 클립)을 저장할 변수
     // 룰렛이 false(멈춤) 상태일 때 재생할 사운드 클립
     public AudioClip RingSound2;
+    public AudioClip OSound;
 
     private AudioSource audioSource;
     // private: 클래스 내부에서만 접근 가능
@@ -83,6 +84,7 @@ public class RouletteController : MonoBehaviour
             {
                 SoundController.sRotation = true; // 사운드 회전(재생)을 시작
                 this.speed = 10.0f; // 속도를 10으로 설정, 룰렛 회전 시작
+                audioSource.PlayOneShot(OSound);
                 Debug.Log("속도 10 설정"); // 콘솔에 "속도 10 설정" 출력 (디버그 로그)
             }
         }

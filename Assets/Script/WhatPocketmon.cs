@@ -29,37 +29,37 @@ public class WhatPocketmon : MonoBehaviour
         float angle = (transform.eulerAngles.z + offset) % 360f;
         Debug.Log(angle);
 
-        if (angle >= 0 && angle < 60)
+        if (angle >= 330 && angle < 360 || angle >= 0 && angle < 30)
         {
             Debug.Log("1");
             PocketmonEncyNum = 1;
             ButtonController.PocketmonEncy1.SetActive(true);
         }
-        else if (angle >= 60 && angle < 120)
+        else if (angle >= 30 && angle < 90)
         {
             Debug.Log("2");
             PocketmonEncyNum = 2;
             ButtonController.PocketmonEncy2.SetActive(true);
         }
-        else if (angle >= 120 && angle < 180)
+        else if (angle >= 90 && angle < 150)
         {
             Debug.Log("3");
             PocketmonEncyNum = 3;
             ButtonController.PocketmonEncy3.SetActive(true);
         }
-        else if (angle >= 180 && angle < 240)
+        else if (angle >= 150 && angle < 210)
         {
             Debug.Log("4");
             PocketmonEncyNum = 4;
             ButtonController.PocketmonEncy4.SetActive(true);
         }
-        else if (angle >= 240 && angle < 300)
+        else if (angle >= 210 && angle < 270)
         {
             Debug.Log("5");
             PocketmonEncyNum = 5;
             ButtonController.PocketmonEncy5.SetActive(true);
         }
-        else if (angle >= 300 && angle < 360)
+        else if (angle >= 270 && angle < 330)
         {
             Debug.Log("6");
             PocketmonEncyNum = 6;
