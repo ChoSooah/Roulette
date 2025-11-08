@@ -10,8 +10,10 @@ public class ButtonController : MonoBehaviour
     public GameObject PocketmonEncy4;
     public GameObject PocketmonEncy5;
     public GameObject PocketmonEncy6;
+
     public GameObject BackButton;
     public GameObject ReturnButton;
+
     public static bool Reset = false;
 
     public Button button;
@@ -42,7 +44,7 @@ public class ButtonController : MonoBehaviour
         ReturnButton.SetActive(true);
         BackButton.SetActive(false);
         Reset = true;
-        WhatPocketmon.noRotationRoulette = false;
+        WhatPocketmon.isNoRotationRoulette = false;
     }
 
     public void ReturnScene()

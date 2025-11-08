@@ -3,20 +3,20 @@ using UnityEngine;
 public class SoundController : MonoBehaviour
 {
 
-    public static bool sRotation;
+    public static bool isSoundRotaion;
     // 사운드 재생 지점을 알려주는 변수
     // public static: 외부에서 '클래스 이름.변수이름'으로 접근, 수정 가능
-    // sRotation: 룰렛 회전 시작에 맞춰 사운드를 재생할 시. 'true'로 설정
+    // isSoundRotaion: 룰렛 회전 시작에 맞춰 사운드를 재생할 시. 'true'로 설정
 
-    public static bool volumeDown;
+    public static bool isVolumeDown;
     // 볼륨 감소 지점을 알려주는 변수
     // public static: 외부에서 '클래스 이름.변수이름'으로 접근, 수정 가능
-    // volumeDown: 룰렛 멈춤 시작에 맞춰 볼륨 감소 시, 'true'로 설정
+    // isVolumeDown: 룰렛 멈춤 시작에 맞춰 볼륨 감소 시, 'true'로 설정
 
-    public static bool stopSound;
+    public static bool isStopSound;
     // 사운드 종료 지점을 알려주는 변수
     // public static: 외부에서 '클래스 이름.변수이름'으로 접근, 수정 가능
-    // stopSound: 룰렛이 완전히 멈췄을 때 사운드 종료 시, 'true'로 설정
+    // isStopSound: 룰렛이 완전히 멈췄을 때 사운드 종료 시, 'true'로 설정
 
     public float VolSound = 1f;
     // 현재 볼륨 값을 저장하고 제어하는 실수형 변수
@@ -37,26 +37,26 @@ public class SoundController : MonoBehaviour
     {
         audioSource.volume = VolSound; //볼륨을 매 프레임마다 설정
 
-        if (sRotation == true)
+        if (isSoundRotaion == true)
         // 사운드 재생 시작 시 (룰렛이 회전할 시)
         {
             VolSound = 1f; //볼륨을 1f(최대 볼륨)으로 초기화
             audioSource.loop = true; //사운드를 반복 재생
             audioSource.Play(); //AudioSource에 있는 음악 재생
-            sRotation = false; // 플래그를 false로 리셋
+            isSoundRotaion = false; // 플래그를 false로 리셋
         }
 
-        if (volumeDown == true)
+        if (isVolumeDown == true)
         // 볼륨 감소 시 (룰렛이 멈추기 시작할 시)
         {
             VolSound *= 0.993f; //현재 볼륨에서 0.993을 곱해 볼륨 감소
         }
-        else if (stopSound == true)
+        else if (isStopSound == true)
         // 사운드 종료 시 (룰렛이 완전히 멈출 시)
         {
             VolSound = 0f; //볼륨을 0f(최저 볼륨)으로 설정
             audioSource.Stop(); //음악 재생 정지
-            stopSound = false; // 플래그를 false로 리셋
+            isStopSound = false; // 플래그를 false로 리셋
         }
     }
 }

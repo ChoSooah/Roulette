@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class WhatPocketmon : MonoBehaviour
 {
-    public static bool checkPocketmon = false;
-    public static bool noRotationRoulette = false;
+    public static bool isCheckPocketmon = false;
+    public static bool isNoRotationRoulette = false;
     public static int PocketmonEncyNum = 0;
     public ButtonController ButtonController;
     void Start()
@@ -14,9 +14,9 @@ public class WhatPocketmon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (checkPocketmon == true)
+        if (isCheckPocketmon == true)
         {
-            noRotationRoulette = true;
+            isNoRotationRoulette = true;
             PrintPocketMon();
         }
 
@@ -71,6 +71,6 @@ public class WhatPocketmon : MonoBehaviour
         }
         ButtonController.ReturnButton.SetActive(false);
         ButtonController.BackButton.SetActive(true);
-        checkPocketmon = false;
+        isCheckPocketmon = false;
     }
 }
