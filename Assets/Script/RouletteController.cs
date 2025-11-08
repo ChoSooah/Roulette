@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class RouletteController : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class RouletteController : MonoBehaviour
     // AudioClip: Unity에서 사운드 파일을 저장하는 자료형
     // RingSound: 룰렛이 멈춤 상태일 때 재생할 효과음(사운드 클립)을 저장할 변수
     // 룰렛이 false(멈춤) 상태일 때 재생할 사운드 클립
+    public AudioClip RingSound2;
 
     private AudioSource audioSource;
     // private: 클래스 내부에서만 접근 가능
@@ -42,6 +44,7 @@ public class RouletteController : MonoBehaviour
             SoundController.volumeDown = false; // 사운드 컨트롤러에 '사운드 멈춤' 신호 전달
             SoundController.stopSound = true; // 사운드 재생 멈춤
             audioSource.PlayOneShot(RingSound); // 효과음 RingSound를 재생
+            WhatPocketmon.checkPocketmon = true;
             this.isStop = false; // 멈춤 정지
             Debug.Log("False"); // 콘솔에 "False" 출력 (디버그 로그)
         }
@@ -61,10 +64,14 @@ public class RouletteController : MonoBehaviour
     }
     void Update()
     {
-
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && WhatPocketmon.noRotationRoulette == false)
         // 왼쪽 마우스 버튼 클릭 시
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                // UI 위에서 클릭된 경우
+                return;
+            }
             if (speed > 0)
             // speed가 0보다 클 시
             {
@@ -92,14 +99,15 @@ public class RouletteController : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown("q")) //q 버튼을 누를 시
+        if (ButtonController.Reset == true)
         {
             GetComponentInParent<ParticleSystem>().Play();
             speed = 0f; // 속도를 0으로 설정, 즉시 정지
             isStop = false; // 멈춤 상태를 해제
-            audioSource.PlayOneShot(RingSound); // 정지 효과음을 재생
+            audioSource.PlayOneShot(RingSound2); // 정지 효과음을 재생
             transform.rotation = Quaternion.identity; // 월드 기준으로 회전값 리셋
             Debug.Log("리셋"); // 콘솔에 "리셋" 출력 (디버그 로그)
+            ButtonController.Reset = false;
         }
     }
 
