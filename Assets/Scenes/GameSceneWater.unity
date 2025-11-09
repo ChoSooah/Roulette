@@ -1648,8 +1648,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RouletteController
   speed: 0
   isStoped: 0
-  RingSound: {fileID: 8300000, guid: b38cc890e3d63cc46b6f8167928e21d9, type: 3}
-  RingSound2: {fileID: 8300000, guid: 7eb8e4265ae72b04e84feb0c677027e6, type: 3}
+  StopRingSound: {fileID: 8300000, guid: b38cc890e3d63cc46b6f8167928e21d9, type: 3}
+  ResetRingSound: {fileID: 8300000, guid: 7eb8e4265ae72b04e84feb0c677027e6, type: 3}
   OSound: {fileID: 8300000, guid: e3ed729e548f68f48b50c19b118ae70c, type: 3}
 --- !u!199 &1496188546
 ParticleSystemRenderer:
