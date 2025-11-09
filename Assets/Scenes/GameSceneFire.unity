@@ -6525,6 +6525,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WhatPocketmon
   ButtonController: {fileID: 541011057}
+  PocketmonVoice1: {fileID: 8300000, guid: d93aa2e23901aa943868a9b87e8ed89d, type: 3}
+  PocketmonVoice2: {fileID: 8300000, guid: 6a48ba780e4d34846929e2e876cc928d, type: 3}
+  PocketmonVoice3: {fileID: 8300000, guid: b3204b775653c114abc2cc77794b1e5b, type: 3}
+  PocketmonVoice4: {fileID: 8300000, guid: f63511614c209e74da23cf4c373ce84c, type: 3}
+  PocketmonVoice5: {fileID: 8300000, guid: 012f0760827cd394b8e29da6b93f6696, type: 3}
+  PocketmonVoice6: {fileID: 8300000, guid: 11dbc699e0b6d8742b7286b28a9d347a, type: 3}
 --- !u!1 &1531816308
 GameObject:
   m_ObjectHideFlags: 0

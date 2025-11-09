@@ -19,11 +19,6 @@ public class RouletteController : MonoBehaviour
     // isStoped: 룰렛의 멈춤(감속) 과정이 진행 중인지 체크하는 변수
     // false: 거짓, 즉 시작 대기 혹은 회전 상태
 
-    public AudioClip StopRingSound;
-    // public: 외부에서도 접근 가능
-    // AudioClip: Unity에서 사운드 파일을 저장하는 자료형
-    // StopRingSound: 룰렛이 멈춤 상태일 때 재생할 효과음(사운드 클립)을 저장할 변수
-    // 룰렛이 false(멈춤) 상태일 때 재생할 사운드 클립
     public AudioClip ResetRingSound;
     public AudioClip OSound;
 
@@ -98,7 +93,6 @@ public class RouletteController : MonoBehaviour
             speed = 0f; //속도를 0으로 설정
             SoundController.isVolumeDown = false; // 사운드 컨트롤러에 '사운드 멈춤' 신호 전달
             SoundController.isStopSound = true; // 사운드 재생 멈춤
-            audioSource.PlayOneShot(StopRingSound); // 효과음 StopRingSound를 재생
             WhatPocketmon.isCheckPocketmon = true;
             this.isStoped = false; // 멈춤 정지
             Debug.Log("False"); // 콘솔에 "False" 출력 (디버그 로그)

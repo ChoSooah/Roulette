@@ -1648,7 +1648,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RouletteController
   speed: 0
   isStoped: 0
-  StopRingSound: {fileID: 8300000, guid: b38cc890e3d63cc46b6f8167928e21d9, type: 3}
   ResetRingSound: {fileID: 8300000, guid: 7eb8e4265ae72b04e84feb0c677027e6, type: 3}
   OSound: {fileID: 8300000, guid: e3ed729e548f68f48b50c19b118ae70c, type: 3}
 --- !u!199 &1496188546
@@ -6525,6 +6524,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WhatPocketmon
   ButtonController: {fileID: 541011057}
+  PocketmonVoice1: {fileID: 8300000, guid: 4cfc5022400b2934fb537df9b81e9d84, type: 3}
+  PocketmonVoice2: {fileID: 8300000, guid: c021053f15f1e9a4b9c38b30840036bb, type: 3}
+  PocketmonVoice3: {fileID: 8300000, guid: 23c5548bbf3bcf64f942f5c6605cf81c, type: 3}
+  PocketmonVoice4: {fileID: 8300000, guid: ed1750b5b27c0df43909b70a637e2c0d, type: 3}
+  PocketmonVoice5: {fileID: 8300000, guid: 9ef11af20f4b30c4d8239535309a16bf, type: 3}
+  PocketmonVoice6: {fileID: 8300000, guid: 212a955ba8eba6e4894241130e75bb98, type: 3}
 --- !u!1 &1531816308
 GameObject:
   m_ObjectHideFlags: 0
